@@ -1,0 +1,10 @@
+body{
+  background: repeating-radial-gradient(
+    ellipse,           /* Utilise des ellipses pour imiter les cernes de bois */
+    #aa5214,           /* Couleur marron foncé */
+    #CD853F 20%,       /* Dégradé vers marron clair à 20% de l'ellipse */
+    #b15718 40%        /* Retour au marron foncé à 40%, créant des cercles concentriques */
+  );
+  background-size: 1000px 100px;
+  padding: 5px;
+}

@@ -1,0 +1,6 @@
+.separator{
+    height: 0;
+    width: 60%;
+    border: dotted 1px black;
+    margin: 3rem auto;
+}

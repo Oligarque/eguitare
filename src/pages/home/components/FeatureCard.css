@@ -1,0 +1,8 @@
+.card--title{
+    color: chocolate;
+    font-weight: bold;
+}
+
+.card--text{
+    text-align: justify;
+}
