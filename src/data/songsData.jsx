@@ -9,13 +9,21 @@ const songs = [
         title: 'Lagrima',
         path: 'media/lagrima/',  //chemin à partir de src
         
-        P_dessus: 'media/lagrima/P_dessus_Lagrima.mp4',
-        P_Face: 'media/lagrima/P_Face_Lagrima.mp4',
-        P_mGauche_Penche: 'media/lagrima/P_mGauche_Penché_Lagrima.mp4',
-        P_mGauche_Face: 'media/lagrima/P_mGauche_Face_Lagrima.mp4',
-        P_mDroite: 'media/lagrima/P_mDroite_Lagrima.mp4',
-        P_Long_manche: 'media/lagrima/P_Long_ manche_Lagrima.mp4',
-        audio: 'media/lagrima/Audio_Lagrima.mp3'
+        P_dessus: '/media/lagrima/P_dessus_Lagrima.mp4',
+        P_Face: '/media/lagrima/P_Face_Lagrima.mp4',
+        P_mGauche_Penche: '/media/lagrima/P_mGauche_Penché_Lagrima.mp4',
+        P_mGauche_Face: '/media/lagrima/P_mGauche_Face_Lagrima.mp4',
+        P_mDroite: '/media/lagrima/P_mDroite_Lagrima.mp4',
+        P_Long_manche: '/media/lagrima/P_Long_ manche_Lagrima.mp4',
+        audio: '/media/lagrima/Audio_Lagrima.mp3',
+        videoAide: [
+            {
+                id: 1,
+                titre: 'aide accord particulier',
+                path: '/media/lagrima/P_mDroite_Lagrima.mp4',
+                debutVideo: 27
+            }
+        ]
     },
     {
         id: 2,

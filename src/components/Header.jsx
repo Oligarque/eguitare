@@ -1,5 +1,5 @@
 // '/components/Header.jsx'
-// Le header de l'app présent sur totues les pages
+// Le header de l'app présent sur toutes les pages
 
 
 import React, { useState } from 'react';

@@ -1,34 +1,37 @@
+*{
+    padding: 5px;
+}
+div {
+    border: 1px solid yellow;
+}
+
 .learning--container{
     width: 100%;
-    left: auto;
-    right: auto;
+    height: 900px;
+    border: 2px dashed red;
     background-color: antiquewhite;
 }
 
 .learning--videosZone{
     background-color: blueviolet;
     width: 100%;
+    border: 3px solid black;
 }
 
+.learning--smallVideo{
+    height: 100px;
+    width: 150px;
+}
 .learning--bigVideo{
+    height: 300px;
     position: relative;
 }
-
 .learning--overlay{
     background-color: pink;
     position: absolute;
     width: 15%;
     top: 3%;
     right: 3%;
-}
-
-.learning--smallVideo{
-    max-width: 70%;
-    max-height: 70%;
-}
-
-.smallVideo--Container{
-    width: 100%;
 }
 
 .learning--buttons{
