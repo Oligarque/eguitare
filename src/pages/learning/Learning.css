@@ -17,8 +17,6 @@
 .learning--overlay{
     background-color: pink;
     position: absolute;
-    width: 15%;
-    height: 15%;
     top: 5%;
     right: 3%;
 }

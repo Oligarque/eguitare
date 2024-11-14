@@ -36,7 +36,7 @@ function Learning() {
   const [isLooping, setIsLooping] = useState(false);
   const [bornesAide, setBornesAide] = useState([20, 38]);
   const [showBoutonAide, setShowBoutonAide] = useState(false);
-  const [showVideoAide, setShowVideoAide] = useState(true);
+  const [showVideoAide, setShowVideoAide] = useState(false);
   const [sourceBig, setSourceBig] = useState(song.P_dessus);
   const audioRef = useRef();
   const sliderVolumeRef = useRef();
@@ -152,6 +152,13 @@ function Learning() {
                   fonctionX05={() => { setPlaybackRate(0.5) }}
                   fonctionX025={() => { setPlaybackRate(0.25) }}
                 />
+                
+                <SliderVolume
+                  ref={sliderVolumeRef}
+                  volume={volume}
+                  onClick={event => setVolume(event.target.valueAsNumber)}
+                />
+                <br/>
                 <BoutonBoucle
                   onClickDebutBoucle={event => setIsLooping(event.target.checked)}
                   onChangeDebutBoucle={event => {
@@ -170,11 +177,6 @@ function Learning() {
                     }
                   }
                   }
-                />
-                <SliderVolume
-                  ref={sliderVolumeRef}
-                  volume={volume}
-                  onClick={event => setVolume(event.target.valueAsNumber)}
                 />
               </div>
             </div>
