@@ -17,8 +17,10 @@
 .learning--overlay{
     background-color: pink;
     position: absolute;
-    top: 5%;
-    right: 3%;
+    width: 97%;
+    height: 100%;
+    top: 0%;
+    
 }
 
 .learning--smallVideo{

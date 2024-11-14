@@ -121,12 +121,13 @@ function Learning() {
                   source={sourceBig}
                   value={time}
                 />
-                <div className='learning--overlay' style={{width : showVideoAide ? "90%" : "5%", height : showVideoAide ? "90%" : "5%"}} >
+                <div className='learning--overlay' 
+                style={{display : showVideoAide ? "" : "none"}} >
                 <VideoExplication
                     ref={videoAideRef}
                     playing={playingVideoAide}
                     source={song.videoAide[0].path}
-                    size={"80%"}
+                    size={"100%"}
                   />
                 </div>
               </div>
@@ -140,7 +141,7 @@ function Learning() {
                 onChange={event => { handleSeek(event.target.valueAsNumber) }}
               />
               <br/>
-              <button onClick={event => {toggleButton()}}>Vidéo d'aide pour ce passage</button>
+              <button style={{display : showBoutonAide ? '' : "none"}} onClick={event => {toggleButton()}}>Vidéo d'aide pour ce passage</button>
             </div>
             <div className='row'>
               <div className='learning--buttons'>

@@ -7,6 +7,7 @@ const VideoExplication = forwardRef(function VideoExplication(props, ref){
             <ReactPlayer
             ref={ref}
             width={props.size} height={props.size}
+            playing={props.playing}
             url={props.source} type="video/mp4"
             controls={true}
             />
