@@ -17,7 +17,6 @@ import BoutonControles from './components/BoutonControles.jsx';
 import BoutonBoucle from './components/BoutonBoucle.jsx';
 import VideoExplication from './components/VideoExplication.jsx';
 import BoutonPlay from './components/BoutonControle/BoutonPlay.jsx';
-import BoutonPbr from './components/BoutonControle/BoutonPbr.jsx';
 
 import './Learning.css'
 
@@ -38,19 +37,21 @@ function Learning() {
   const [bornesAide, setBornesAide] = useState([20, 38]);
   const [showBoutonAide, setShowBoutonAide] = useState(false);
   const [showVideoAide, setShowVideoAide] = useState(true);
+  const [sourceBig, setSourceBig] = useState(song.P_dessus);
   const audioRef = useRef();
   const sliderVolumeRef = useRef();
   const progressBarRef = useRef();
   const videoAideRef = useRef();
 
   // On peut rajouter autant de ref que de vidéos souhaitées
+  const videoBigRef = useRef();
   const video1Ref = useRef();
   const video2Ref = useRef();
   const video3Ref = useRef();
   const video4Ref = useRef();
   const video5Ref = useRef();
   const video6Ref = useRef();
-  let videoRefArray = [video1Ref, video2Ref, video3Ref, video4Ref, video5Ref, video6Ref];
+  let videoRefArray = [videoBigRef, video1Ref, video2Ref, video3Ref, video4Ref, video5Ref, video6Ref];
 
   // Gestion des événements des boutons de controle
   const handlePlay = () => {
@@ -77,6 +78,7 @@ function Learning() {
 
   // Gestion de la boucle de la vidéo
   useEffect(() => {
+    videoBigRef.current.seekTo(time, "seconds");
 
     if (isLooping && bornesBoucle[0] < bornesBoucle[1] && (time > bornesBoucle[1] || time < bornesBoucle[0])) {
       handleSeek(bornesBoucle[0]);
@@ -93,6 +95,12 @@ function Learning() {
     else setPlayingVideoAide(false);
   };
 
+  const setVideoBig = (song) => {
+    setSourceBig(song);
+    videoAideRef.current.playing = false;
+  }
+
+
 
 
   const affichage = (
@@ -105,18 +113,20 @@ function Learning() {
               <h1>{song.title}</h1>
             </div>
             <div className='row'>
-              <div className='learning--bigVideo'>
+              <div className='learning--bigVideo' >
                 <Video
-                  ref={video1Ref}
+                  ref={videoBigRef}
                   pbrate={pbrate}
                   playing={playing}
-                  source={song.P_dessus}
+                  source={sourceBig}
+                  value={time}
                 />
-                <div className='learning--overlay {showVideoAide ? "d-none" : ""}'>
-                  <VideoExplication
+                <div className='learning--overlay' style={{width : showVideoAide ? "90%" : "5%", height : showVideoAide ? "90%" : "5%"}} >
+                <VideoExplication
                     ref={videoAideRef}
                     playing={playingVideoAide}
-                    source={song.videoAide}
+                    source={song.videoAide[0].path}
+                    size={"80%"}
                   />
                 </div>
               </div>
@@ -129,6 +139,8 @@ function Learning() {
                 value={time}
                 onChange={event => { handleSeek(event.target.valueAsNumber) }}
               />
+              <br/>
+              <button onClick={event => {toggleButton()}}>Vidéo d'aide pour ce passage</button>
             </div>
             <div className='row'>
               <div className='learning--buttons'>
@@ -169,10 +181,10 @@ function Learning() {
           </div>
 
         </div>
-        <div className='col col-12 col-md-4'>
+        <div className='col col-12 col-md-4' >
           <div className='container smallVideo--container'>
             <div className='row'>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_dessus)}}>
                 <Video
                   ref={video1Ref}
                   pbrate={pbrate}
@@ -182,7 +194,7 @@ function Learning() {
                   onProgress={event => setTime(event.playedSeconds)}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_Long_manche)}}>
                 <Video
                   ref={video2Ref}
                   pbrate={pbrate}
@@ -190,7 +202,7 @@ function Learning() {
                   source={song.P_Long_manche}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mGauche_Penche)}}>
                 <Video
                   ref={video3Ref}
                   pbrate={pbrate}
@@ -198,7 +210,7 @@ function Learning() {
                   source={song.P_mGauche_Penche}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mGauche_Face)}}>
                 <Video
                   ref={video4Ref}
                   pbrate={pbrate}
@@ -206,7 +218,7 @@ function Learning() {
                   source={song.P_mGauche_Face}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_Face)}}>
                 <Video
                   ref={video5Ref}
                   pbrate={pbrate}
@@ -214,7 +226,7 @@ function Learning() {
                   source={song.P_Face}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mDroite)}}>
                 <Video
                   ref={video6Ref}
                   pbrate={pbrate}
@@ -239,7 +251,7 @@ function Learning() {
         volume={volume}
       />
 
-    </div>)
+    </div>);
   return affichage
 
 }

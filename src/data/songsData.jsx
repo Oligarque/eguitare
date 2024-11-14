@@ -20,7 +20,7 @@ const songs = [
             {
                 id: 1,
                 titre: 'aide accord particulier',
-                path: '/media/lagrima/P_mDroite_Lagrima.mp4',
+                path: '/media/lagrima/Video_Explications.mp4',
                 debutVideo: 27
             }
         ]
