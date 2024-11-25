@@ -1,0 +1,37 @@
+.learning--container{
+    width: 100%;
+    left: auto;
+    right: auto;
+    background-color: antiquewhite;
+}
+
+.learning--videosZone{
+    background-color: blueviolet;
+    width: 100%;
+}
+
+.learning--bigVideo{
+    position: relative;
+}
+
+.learning--overlay{
+    background-color: pink;
+    position: absolute;
+    width: 97%;
+    height: 100%;
+    top: 0%;
+    
+}
+
+.learning--smallVideo{
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.smallVideo--Container{
+    width: 100%;
+}
+
+.learning--buttons{
+    height: 70px;
+}

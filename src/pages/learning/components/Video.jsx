@@ -16,7 +16,7 @@ const Video = forwardRef(function Video(props, ref) {
             playbackRate={props.pbrate}
             muted
             playing={props.playing}
-            width="15%" height="15%"
+            width="100%" height="100%"
             url={props.source} type="video/mp4"
             progressInterval={props.progressInterval}
             onProgress={props.onProgress}

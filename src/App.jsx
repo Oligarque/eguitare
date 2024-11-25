@@ -11,6 +11,7 @@ import SongList from './pages/songList/SongList';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+//import TestLayout from './TestLayout';
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home/>} />
+        {/*<Route exact path="/" element={<TestLayout/>} />*/}
+        <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/learning/:songId" element={<Learning/>}/>

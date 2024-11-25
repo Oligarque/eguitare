@@ -1,22 +1,42 @@
-// pages/learning/components/BoutonBoucle.jsx
-// Un component pour gérer le boutonBoucle
-
-
 import React from 'react'
-import { forwardRef } from 'react';
 
 // Création du bouton permettant de boucler entre deux temps
-const BoutonBoucle = forwardRef(function BoutonBoucle(props, ref){
-
+const BoutonBoucle = (props) => {
     return(
-        <>
-        <button
-        ref={ref}
-        onClick={props.onClick}
-        >{props.buttonText}</button>
-        </>
+        <div>
+
+        <label>
+        Boucler
+        <input
+        type='checkbox'
+        onClick={props.onClickDebutBoucle}
+        
+        />
+        </label>
+        <br/>
+        <label>
+        Début de la boucle :
+          <input
+          className="debutBoucle"
+          type="text"
+          onChange={props.onChangeDebutBoucle}
+          defaultValue={0}
+          />
+        </label>
+
+          <br/>
+          <label>
+          Fin de la boucle :
+          <input
+          className="finBoucle"
+          type="text"
+          onChange={props.onChangeFinBoucle}
+          defaultValue={10}
+          />
+          </label>
+        </div>
     );
 
-});
+};
 
 export default BoutonBoucle;
