@@ -17,7 +17,7 @@ function Home() {
         <Container className="acceuil mt-5"> 
             <Row className="text-center">
                 <Col>
-                    <h1 className="display-4 acceuil--titre">Bienvenue sur Eguitare</h1>
+                    <h1 className="display-4 acceuil--title">Bienvenue sur Eguitare</h1>
                     <p className="lead">
                         Apprenez la guitare facilement grâce à des vidéos interactives et des morceaux  adaptés à tous les niveaux.
                     </p>
@@ -29,13 +29,13 @@ function Home() {
             <Separator/>
             <Row className="text-center">
                 <Col md={4} >
-                    <h2>Vidéo de présentation</h2>
+                    <h2 className='section-title'>Vidéo de présentation</h2>
                     <p>Vidéo de présentation du projet eguitare</p>
                 </Col>
                 <Col md={8} ><YoutubeEmbed videoId="y15YEs5q-R4?si=NzTiwAw-8Cz6x5Ir" /></Col>
             </Row>
             <Separator/>
-            <Row className="mt-5">
+            <Row className="mt-5 acceuil--cards"  >
                 <Col md={4}>
                     <FeatureCard
                         title="Vidéos interactives"
@@ -58,7 +58,7 @@ function Home() {
             <Separator/>
             <Row className="mt-5 text-center">
                 <Col md={6} className='mx-auto'>
-                    <h2 className="mb-4">Pourquoi choisir Eguitare ?</h2>
+                    <h2 className="mb-4 section-title">Pourquoi choisir Eguitare ?</h2>
                     <p>
                         Que vous soyez débutant ou guitariste confirmé, Eguitare vous offre une méthode unique pour progresser rapidement
                         et efficacement. Avec nos vidéos interactives, jouer de la guitare devient

@@ -1,3 +1,17 @@
 .acceuil{
-    background-color: lightgray;
+    background-color: var(--background-color);
+    border-radius: 6%;
+}
+
+.acceuil--title{
+    color: var(--title-color);
+    font-weight: bolder;
+}
+
+.acceuil--cards  card {
+    border-radius: 60%;
+}
+
+.section-title{
+    color: var(--sectionTitle-color);
 }
