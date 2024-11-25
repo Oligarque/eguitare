@@ -169,10 +169,10 @@ function Learning() {
           </div>
 
         </div>
-        <div className='col col-12 col-md-4'>
+        <div className='col col-12 col-md-2'>
           <div className='container smallVideo--container'>
             <div className='row'>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-4 col-md-12 learning--smallVideo'>
                 <Video
                   ref={video1Ref}
                   pbrate={pbrate}
@@ -182,7 +182,7 @@ function Learning() {
                   onProgress={event => setTime(event.playedSeconds)}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-4 col-md-12 learning--smallVideo'>
                 <Video
                   ref={video2Ref}
                   pbrate={pbrate}
@@ -190,7 +190,7 @@ function Learning() {
                   source={song.P_Long_manche}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-4 col-md-12 learning--smallVideo'>
                 <Video
                   ref={video3Ref}
                   pbrate={pbrate}
@@ -198,7 +198,7 @@ function Learning() {
                   source={song.P_mGauche_Penche}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-4 col-md-12 learning--smallVideo'>
                 <Video
                   ref={video4Ref}
                   pbrate={pbrate}
@@ -206,7 +206,7 @@ function Learning() {
                   source={song.P_mGauche_Face}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-4 col-md-12 learning--smallVideo'>
                 <Video
                   ref={video5Ref}
                   pbrate={pbrate}
@@ -214,7 +214,7 @@ function Learning() {
                   source={song.P_Face}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo'>
+              <div className='col col-4 col-md-12 learning--smallVideo'>
                 <Video
                   ref={video6Ref}
                   pbrate={pbrate}

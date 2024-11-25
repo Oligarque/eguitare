@@ -1,3 +1,3 @@
 .acceuil{
-    background-color: lightgray;
+    background-color: var(--background-color);
 }
