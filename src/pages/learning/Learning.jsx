@@ -16,8 +16,6 @@ import SliderVolume from './components/SliderVolume.jsx';
 import BoutonControles from './components/BoutonControles.jsx';
 import BoutonBoucle from './components/BoutonBoucle.jsx';
 import VideoExplication from './components/VideoExplication.jsx';
-import BoutonPlay from './components/BoutonControle/BoutonPlay.jsx';
-
 import './Learning.css'
 
 
@@ -34,10 +32,12 @@ function Learning() {
   const [volume, setVolume] = useState(0.15);
   const [bornesBoucle, setBornesBoucle] = useState([0, 10]);
   const [isLooping, setIsLooping] = useState(false);
+  const [boutonBoucleState, setBoutonBoucleState] = useState(0);
+  const [labelBoutonBoucle, setLabelBoutonBoucle] = useState("Borne 1");
   const [bornesAide, setBornesAide] = useState([20, 38]);
   const [showBoutonAide, setShowBoutonAide] = useState(false);
   const [showVideoAide, setShowVideoAide] = useState(false);
-  const [sourceBig, setSourceBig] = useState(song.P_dessus);
+  const [sourceBig, setSourceBig] = useState(song.P_Face);
   const audioRef = useRef();
   const sliderVolumeRef = useRef();
   const progressBarRef = useRef();
@@ -74,6 +74,24 @@ function Learning() {
     setTime(progress);
     for (let i = 0; i < videoRefArray.length; i++) videoRefArray[i].current.seekTo(progress, "seconds");
     audioRef.current.seekTo(progress, "seconds");
+  }
+
+  const handleLoop = (borne) => {
+    if(boutonBoucleState == 0){
+      setBornesBoucle([borne, bornesBoucle[1]]);
+      setBoutonBoucleState(1);
+      setLabelBoutonBoucle("Borne 2");
+    }
+    else if(boutonBoucleState == 1){
+      setBornesBoucle([bornesBoucle[0],  borne]);
+      setIsLooping(true);
+      setBoutonBoucleState(2);
+      setLabelBoutonBoucle("Arrêter boucle");
+    } else {
+      setIsLooping(false);
+      setBoutonBoucleState(0);
+      setLabelBoutonBoucle("Borne 1");
+    }
   }
 
   // Gestion de la boucle de la vidéo
@@ -160,25 +178,12 @@ function Learning() {
                   onClick={event => setVolume(event.target.valueAsNumber)}
                 />
                 <br/>
+                <p>Cliquer une fois pour la première borne, une seconde pour lancer la boucle et une troisième pour l'arrêter</p>
+                <br/>
                 <BoutonBoucle
-                  onClickDebutBoucle={event => setIsLooping(event.target.checked)}
-                  onChangeDebutBoucle={event => {
-                    if (event.target.value !== "") {
-                      setBornesBoucle([parseInt(event.target.value), bornesBoucle[1]]);
-                    } else {
-                      setBornesBoucle([0, bornesBoucle[1]]);
-                    }
-                  }
-                  }
-                  onChangeFinBoucle={event => {
-                    if (event.target.value !== "") {
-                      setBornesBoucle([bornesBoucle[0], parseInt(event.target.value)]);
-                    } else {
-                      setBornesBoucle([bornesBoucle[0], 0])
-                    }
-                  }
-                  }
-                />
+                label={labelBoutonBoucle}
+                handleLoop={event => handleLoop(time)}/>
+                <br/>
               </div>
             </div>
           </div>
