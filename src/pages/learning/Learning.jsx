@@ -29,6 +29,7 @@ function Learning() {
   const [playingVideoAide, setPlayingVideoAide] = useState(false);
   const [pbrate, setPlaybackRate] = useState(1);
   const [time, setTime] = useState(0);
+  const [timeLabel, setTimeLabel] = useState("0");
   const [volume, setVolume] = useState(0.15);
   const [bornesBoucle, setBornesBoucle] = useState([0, 10]);
   const [isLooping, setIsLooping] = useState(false);
@@ -105,7 +106,14 @@ function Learning() {
     if (bornesAide[0] <= time && time <= bornesAide[1]) setShowBoutonAide(true);
     else setShowBoutonAide(false);
 
-  }, [isLooping, bornesBoucle, time, bornesAide, handleSeek]);
+    let secondes = Math.floor(time)%60;
+    let minutes = Math.floor(time/60);
+
+    if(secondes<10) setTimeLabel(minutes+":0"+secondes);
+    else setTimeLabel(minutes+":"+secondes);
+    
+
+  }, [isLooping, bornesBoucle, time, bornesAide, handleSeek, setTimeLabel]);
 
   const toggleButton = () => {
     setShowVideoAide(!showVideoAide);
@@ -154,7 +162,7 @@ function Learning() {
               <SliderProgressBar
                 ref={progressBarRef}
                 video={video1Ref.current}
-                timeText={Math.floor(time)}
+                timeText={timeLabel}
                 value={time}
                 onChange={event => { handleSeek(event.target.valueAsNumber) }}
               />
