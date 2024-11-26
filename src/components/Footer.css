@@ -3,8 +3,9 @@
     position: relative;
     bottom: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    display: flex;
+    display: flex;    
     justify-content: space-evenly;
     background-color: rgb(199, 103, 40);
 }

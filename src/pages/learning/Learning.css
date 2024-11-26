@@ -2,11 +2,12 @@
     width: 100%;
     left: auto;
     right: auto;
-    background-color: antiquewhite;
 }
 
 .learning--videosZone{
-    background-color: blueviolet;
+    background-color: var(--background-color);
+    border-radius: 6%;
+    padding: 0.3rem;
     width: 100%;
 }
 
@@ -20,7 +21,6 @@
     width: 97%;
     height: 100%;
     top: 0%;
-    
 }
 
 .learning--smallVideo{
@@ -34,4 +34,8 @@
 
 .learning--buttons{
     height: 70px;
+}
+
+.songTitle{
+    color: var(--sectionTitle-color);
 }

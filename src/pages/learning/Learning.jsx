@@ -136,7 +136,7 @@ function Learning() {
         <div className='col col-12 col-md-8' >
           <div className='container'>
             <div className='row'>
-              <h1>{song.title}</h1>
+              <h1 className='songTitle'>{song.title}</h1>
             </div>
             <div className='row'>
               <div className='learning--bigVideo' >
