@@ -2,13 +2,9 @@
     width: 100%;
     left: auto;
     right: auto;
-}
-
-.learning--videosZone{
     background-color: var(--background-color);
     border-radius: 6%;
     padding: 0.3rem;
-    width: 100%;
 }
 
 .learning--bigVideo{
@@ -23,13 +19,9 @@
     top: 0%;
 }
 
-.learning--smallVideo{
-    max-width: 70%;
-    max-height: 70%;
-}
-
-.smallVideo--Container{
+.smallVideo--container{
     width: 100%;
+    margin-top: 2rem;
 }
 
 .learning--buttons{

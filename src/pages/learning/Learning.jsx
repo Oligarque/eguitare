@@ -17,6 +17,7 @@ import BoutonControles from './components/BoutonControles.jsx';
 import BoutonBoucle from './components/BoutonBoucle.jsx';
 import VideoExplication from './components/VideoExplication.jsx';
 import './Learning.css'
+import Separator from '../../components/Separator.jsx';
 
 
 function Learning() {
@@ -197,10 +198,10 @@ function Learning() {
           </div>
 
         </div>
-        <div className='col col-12 col-md-4' >
+        <div className='col col-12 col-md-3' >
           <div className='container smallVideo--container'>
             <div className='row'>
-              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_dessus)}}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_dessus)}}>
                 <Video
                   ref={video1Ref}
                   pbrate={pbrate}
@@ -210,7 +211,7 @@ function Learning() {
                   onProgress={event => setTime(event.playedSeconds)}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_Long_manche)}}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_Long_manche)}}>
                 <Video
                   ref={video2Ref}
                   pbrate={pbrate}
@@ -218,7 +219,7 @@ function Learning() {
                   source={song.P_Long_manche}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mGauche_Penche)}}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mGauche_Penche)}}>
                 <Video
                   ref={video3Ref}
                   pbrate={pbrate}
@@ -226,7 +227,7 @@ function Learning() {
                   source={song.P_mGauche_Penche}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mGauche_Face)}}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mGauche_Face)}}>
                 <Video
                   ref={video4Ref}
                   pbrate={pbrate}
@@ -234,7 +235,7 @@ function Learning() {
                   source={song.P_mGauche_Face}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_Face)}}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_Face)}}>
                 <Video
                   ref={video5Ref}
                   pbrate={pbrate}
@@ -242,7 +243,7 @@ function Learning() {
                   source={song.P_Face}
                 />
               </div>
-              <div className='col col-2 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mDroite)}}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => {setVideoBig(song.P_mDroite)}}>
                 <Video
                   ref={video6Ref}
                   pbrate={pbrate}
@@ -255,9 +256,10 @@ function Learning() {
 
         </div>
       </div>
+      <Separator/>
       <div className='row'>
         <h2>Description</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt quam fugit quibusdam accusantium culpa illum soluta sequi, et excepturi officia velit asperiores ipsa doloribus veniam, itaque fuga laboriosam harum.</p>
+        <p>{song.description}</p>
       </div>
       <Audio
         ref={audioRef}
