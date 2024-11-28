@@ -12,13 +12,21 @@ const BoutonControles = (props) => {
         <div className="btnGrid">
 
             <button onClick={props.fonctionPlay} className='btn'>
-                <img className="playerIcon" alt='Play' src='/images/icons/play-btn.svg' ></img>
+                <h3>
+                    <img className="playerIcon" alt='Play' src='/images/icons/play-btn.svg'/> Play
+                </h3>
             </button>
             <button onClick={props.fonctionPause} className='btn'>
-                <img className="playerIcon" alt='Pause' src='/images/icons/pause-btn.svg' ></img>
+                <h3>
+                    <img className="playerIcon" alt='Pause' src='/images/icons/pause-btn.svg'/> Pause
+                </h3>
+                
             </button>
             <button onClick={props.fonctionReset} className='btn'>
-                <img className="playerIcon" alt='Reset' src='/images/icons/arrow-counterclockwise.svg' ></img>
+                <h3>
+                    <img className="playerIcon" alt='Reset' src='/images/icons/arrow-counterclockwise.svg'/> Reset
+                </h3>
+                
             </button>
             <br />
 
