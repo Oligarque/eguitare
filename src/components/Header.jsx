@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import eguitareLogo from '/images/favicon-32x32.png'
+import eguitareLogo from '/images/android-chrome-512x512.png'
 import './Header.css'
 import songs from '../data/songsData';
 
