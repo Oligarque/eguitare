@@ -195,7 +195,6 @@ function Learning() {
                   />
                   <p>Cliquer une fois pour la première borne, une seconde pour lancer la boucle et une troisième pour l'arrêter</p>
 
-
                   </div>
                   
                 </div>
