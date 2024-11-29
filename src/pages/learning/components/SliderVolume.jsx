@@ -8,7 +8,7 @@ import { forwardRef } from 'react';
  // Création du slider permettant d'ajuster le volume de la vidéo
  const SliderVolume = forwardRef (function SliderVolume(props, ref){
     return(
-      <>
+      <div className='col col-3'>
       <input
       id="volume"
       ref={ref}
@@ -18,7 +18,7 @@ import { forwardRef } from 'react';
       min="0" max="1" step="0.01"
       />
       <label htmlFor="volume">Volume</label>
-      </>
+      </div>
     );
   });
 
