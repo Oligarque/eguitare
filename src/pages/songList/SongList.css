@@ -1,0 +1,7 @@
+.songList--container{
+    background-color: aqua;
+}
+
+.songList--title{
+    color: var(--title-color);
+}

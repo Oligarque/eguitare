@@ -7,7 +7,8 @@ const songs = [
     {
         id: 1,
         title: 'Lagrima',
-        path: 'media/lagrima/',  //chemin à partir de src
+        description: 'Lorem Ipsum',
+        difficulty: 'easy',
         
         P_dessus: '/media/lagrima/P_dessus_Lagrima.mp4',
         P_Face: '/media/lagrima/P_Face_Lagrima.mp4',
