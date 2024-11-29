@@ -1,8 +1,8 @@
 .separator{
-    height: 0.8rem;
+    height: 0.6rem;
     width: 80%;
     border: inset 2px black;
-    margin: 3rem auto;
+    margin: 1rem auto;
     border-radius: 80%;
     background-color: var(--separator-color);
 }

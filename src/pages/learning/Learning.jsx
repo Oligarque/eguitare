@@ -137,7 +137,12 @@ function Learning() {
         <div className='col col-12 col-md-8' >
           <div className='container'>
             <div className='row'>
-              <h1 className='songTitle'>{song.title}</h1>
+              <div className='col col-8'>
+                <h1 className='songTitle'>{song.title}</h1>
+                <h2 className='songArtist align-self-end'>de {song.artist}</h2>
+              
+              </div>
+              <h4 className='songInterpret col col-6 col-md-3'>Interprété par {song.interpret}</h4>
             </div>
             <div className='row'>
               <div className='learning--bigVideo' >
@@ -159,6 +164,7 @@ function Learning() {
                 </div>
               </div>
             </div>
+
             <div className='row'>
               <SliderProgressBar
                 ref={progressBarRef}
@@ -170,6 +176,7 @@ function Learning() {
               <br />
               <button style={{ display: showBoutonAide ? '' : "none" }} onClick={event => { toggleButton() }}>Vidéo d'aide pour ce passage</button>
             </div>
+            <Separator/>
             <div className='row'>
               <div className='learning--buttons container'>
 
@@ -193,7 +200,7 @@ function Learning() {
                     label={labelBoutonBoucle}
                     handleLoop={event => handleLoop(time)}
                   />
-                  <p>Cliquer une fois pour la première borne, une seconde pour lancer la boucle et une troisième pour l'arrêter</p>
+                  <p className='d-none d-lg-block'>Cliquer une fois pour la première borne, une seconde pour lancer la boucle et une troisième pour l'arrêter</p>
 
                   </div>
                   
