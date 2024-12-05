@@ -3,7 +3,6 @@
 
 
 import React, { useState } from 'react';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import eguitareLogo from '/images/android-chrome-512x512.png'
 import './Header.css'
@@ -11,48 +10,77 @@ import songs from '../data/songsData';
 
 function Header() {
   return (
-    <header className='header'>
-
-      {/* La navbar  */}
-      <Navbar bg="navbarColor" variant="dark" expand="md">
-        <Container>
+    <header className="header">
+      {/* La navbar */}
+      <nav className="navbar navbar-expand-md navbar-dark bg-navbarColor">
+        <div className="container">
           {/* Logo et titre du site */}
-          <Navbar.Brand as={Link} to="/">
+          <Link className="navbar-brand" to="/">
             <img
-              src={eguitareLogo} 
+              src={eguitareLogo}
               width="40"
               height="40"
               className="d-inline-block align-top"
               alt="Site Logo"
             />
             {' '}EGuitare
-          </Navbar.Brand>
+          </Link>
 
           {/* Bouton pour le menu */}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
           {/* Liens de navigation */}
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link as={Link} to='/' className='home-link'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/contact'>Contact</Nav.Link>
-              <Nav.Link as={Link} to='/about' >About</Nav.Link>
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link home-link" to="/">Home</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact">Contact</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/about">About</Link>
+              </li>
 
               {/* Menu déroulant pour les morceaux */}
-              <NavDropdown title="Songs" id="basic-nav-dropdown">
-                {songs.map(song => (
-                  <NavDropdown.Item as={Link} to={`/learning/${song.id}`} key={song.id}>
-                    {song.title}
-                  </NavDropdown.Item>
-                ))}
-                <NavDropdown.Item as={Link} to='/songList'>Plus de morceaux</NavDropdown.Item>
-                {/* TODO Ajouter une page de liste de sons*/}
-              </NavDropdown>
-              {/* TODO Ajouter une barre de recherche */}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Songs
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {songs.map(song => (
+                    <li key={song.id}>
+                      <Link className="dropdown-item" to={`/learning/${song.id}`}>
+                        {song.title}
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <Link className="dropdown-item" to="/songList">Plus de morceaux</Link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 };
