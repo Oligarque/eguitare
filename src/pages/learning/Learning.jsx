@@ -39,7 +39,7 @@ function Learning() {
   const [bornesAide, setBornesAide] = useState([20, 38]);
   const [showBoutonAide, setShowBoutonAide] = useState(false);
   const [showVideoAide, setShowVideoAide] = useState(false);
-  const [sourceBig, setSourceBig] = useState(song.P_Face);
+  const [sourceBig, setSourceBig] = useState(song.videoPrincipale);
   const audioRef = useRef();
   const sliderVolumeRef = useRef();
   const progressBarRef = useRef();
@@ -214,56 +214,33 @@ function Learning() {
         <div className='col col-12 col-md-3' >
           <div className='container smallVideo--container'>
             <div className='row'>
-              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.P_dessus) }}>
+              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.videoPrincipale) }}>
                 <Video
                   ref={video1Ref}
                   pbrate={pbrate}
                   playing={playing}
-                  source={song.P_dessus}
+                  source={song.videoPrincipale}
                   progressInterval={250}
                   onProgress={event => setTime(event.playedSeconds)}
                 />
               </div>
-              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.P_Long_manche) }}>
-                <Video
-                  ref={video2Ref}
-                  pbrate={pbrate}
-                  playing={playing}
-                  source={song.P_Long_manche}
-                />
-              </div>
-              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.P_mGauche_Penche) }}>
-                <Video
-                  ref={video3Ref}
-                  pbrate={pbrate}
-                  playing={playing}
-                  source={song.P_mGauche_Penche}
-                />
-              </div>
-              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.P_mGauche_Face) }}>
-                <Video
-                  ref={video4Ref}
-                  pbrate={pbrate}
-                  playing={playing}
-                  source={song.P_mGauche_Face}
-                />
-              </div>
-              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.P_Face) }}>
-                <Video
-                  ref={video5Ref}
-                  pbrate={pbrate}
-                  playing={playing}
-                  source={song.P_Face}
-                />
-              </div>
-              <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.P_mDroite) }}>
-                <Video
-                  ref={video6Ref}
-                  pbrate={pbrate}
-                  playing={playing}
-                  source={song.P_mDroite}
-                />
-              </div>
+
+              {song.videoList.map((video,index) => (
+                <div
+                  key = {index}
+                  className='col col-4 col-md-12 learning--smallVideo'
+                  onClick={() => setVideoBig(video)}
+                >
+                  <Video 
+                    ref={video2Ref}
+                    pbrate={pbrate}
+                    playing={playing}
+                    source={video}
+                  />  
+                </div>
+              ))}
+
+              
             </div>
           </div>
 
