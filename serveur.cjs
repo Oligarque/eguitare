@@ -1,3 +1,8 @@
+// Ce script permet d'avoir un serveur express qu'on va pkg en .exe
+// bash > npm run build
+// bash > pkg .
+// Une application en standalone serait le dossier dist + eguitare-win.exe
+
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -14,7 +19,7 @@ const getAssetPath = (asset) => {
 	return path.join(__dirname, 'dist', asset);
 };
 
-// Servir les fichiers statiques (CSS, JS, images, etc.)
+// Servir les fichiers statiques
 app.use(express.static(getAssetPath('')));
 
 // Rediriger toutes les requêtes vers index.html

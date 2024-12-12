@@ -3,6 +3,7 @@
 
 
 import React, { useState } from 'react';
+{/* On import Link pour faire les routes */}
 import { Link } from 'react-router-dom';
 import eguitareLogo from '/images/android-chrome-512x512.png'
 import './Header.css'

@@ -1,5 +1,5 @@
 // 'pages/home/Home.jsx'
-// Page d'acceuil
+// Page d'acceuil du site
 
 
 import React from 'react';
@@ -13,11 +13,11 @@ function Home() {
     return (
 
         /*  on  utilise react-bootstrap pour faciliter la mise en page*/
-        <div className="container acceuil mt-5">
+        <div className="container accueil mainDiv mt-5">
 
             <div className="row text-center">
                 <div className="col">
-                    <h1 className="display-4 acceuil--titre">Bienvenue sur Eguitare</h1>
+                    <h1 className="display-4 accueil--titre">Bienvenue sur Eguitare</h1>
                     <p className="lead">
                         Apprenez la guitare facilement grâce à des vidéos interactives et des morceaux adaptés à tous les niveaux.
                     </p>
@@ -33,7 +33,7 @@ function Home() {
 
             <div className="row text-center">
                 <div className="col-md-4">
-                    <h2>Vidéo de présentation</h2>
+                    <h2 className='section--titre'>Vidéo de présentation</h2>
                     <p>Vidéo de présentation du projet eguitare</p>
                 </div>
                 <div className="col-md-8">
@@ -43,7 +43,7 @@ function Home() {
 
             <Separator />
 
-            <div className="row mt-5">
+            <div className="row">
                 <div className="col-md-4">
                     <FeatureCard
                         title="Vidéos interactives"
@@ -70,9 +70,9 @@ function Home() {
             <Separator />
 
 
-            <div className="row mt-5 text-center">
+            <div className="row text-center">
                 <div className="col-md-6 mx-auto">
-                    <h2 className="mb-4">Pourquoi choisir Eguitare ?</h2>
+                    <h2 className="mb-4 section--titre">Pourquoi choisir Eguitare ?</h2>
                     <p>
                         Que vous soyez débutant ou guitariste confirmé, Eguitare vous offre une méthode unique pour progresser rapidement
                         et efficacement. Avec nos vidéos interactives, jouer de la guitare devient accessible et motivant.

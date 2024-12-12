@@ -2,7 +2,7 @@ import React from 'react';
 
 function YoutubeEmbed({ videoId }){
   return (
-    <div className="video-container">
+    <div className="video-container container">
       <iframe
         width="560"
         height="315"

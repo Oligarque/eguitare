@@ -1,3 +1,22 @@
 *{
     padding: 0;
 }
+
+.mainDiv{
+    background-color: var(--background-color);
+    border-radius: 6%;
+    min-height: 700px;
+    padding: 2rem;
+    margin: auto;
+}
+
+
+h1{
+    color: var(--title-color);
+    font-weight: bolder;
+}
+
+p{
+    color: var(--text-color);
+    font-size: 1.2rem;
+}

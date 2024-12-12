@@ -25,6 +25,7 @@ function Learning() {
   const song = songs.find(song => song.id === parseInt(songId));
   if (!song) {
     return <p>Leçon non trouvée.</p>;
+    {/* Rediriger vers une autre page ? */}
   }
   const [playing, setPlaying] = useState(false)
   const [playingVideoAide, setPlayingVideoAide] = useState(false);
@@ -131,7 +132,7 @@ function Learning() {
 
 
   const affichage = (
-    <div className='learning--container container App'>
+    <div className='learning--container container mainDiv App'>
       <div className='row learning--videosZone justify-content-center' >
 
         <div className='col col-12 col-md-8' >

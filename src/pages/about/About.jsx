@@ -6,7 +6,7 @@ import './About.css'
 
 function About() {
   return (
-    <div>
+    <div className='mainDiv container'>
       <h1>À propos de Eguitare</h1>
       <p>Eguitare est une plateforme pour apprendre à jouer de la guitare avec des vidéos interactives.</p>
     </div>

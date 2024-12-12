@@ -1,9 +1,8 @@
-.acceuil{
-    background-color: var(--background-color);
-    border-radius: 6%;
+.accueil{
+    margin: auto;
 }
 
-.acceuil--title{
+.accueil--titre{
     color: var(--title-color);
     font-weight: bolder;
 }
@@ -12,6 +11,6 @@
     border-radius: 60%;
 }
 
-.section-title{
+.section--titre{
     color: var(--sectionTitle-color);
 }

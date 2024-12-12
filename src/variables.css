@@ -1,7 +1,10 @@
+/* On définit des variables pour personnaliser les couleurs */
+
+
 :root{
     --background-color: #ffb3758e;
     --title-color: #8b3300;
     --sectionTitle-color : #ca5807;
-    --text-color : #EBF118;
+    --text-color : #29007b;
     --separator-color : #e46905;
 }
