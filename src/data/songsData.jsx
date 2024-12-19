@@ -18,7 +18,7 @@ const songs = [
             '/media/lagrima/P_mGauche_Penché_Lagrima.mp4',
             '/media/lagrima/P_mGauche_Face_Lagrima.mp4',
             '/media/lagrima/P_mDroite_Lagrima.mp4',
-            '/media/lagrima/P_Long_ manche_Lagrima.mp4'
+            //'/media/lagrima/P_Long_ manche_Lagrima.mp4'
         ],
         audio: '/media/lagrima/Audio_Lagrima.mp3',
         videoAide: [

@@ -47,14 +47,26 @@ function Learning() {
   const videoAideRef = useRef();
 
   // On peut rajouter autant de ref que de vidéos souhaitées
+
+  // nb vid supp : 
+  const nbVidSupp = song.videoList.length
+
   const videoBigRef = useRef();
   const video1Ref = useRef();
-  const video2Ref = useRef();
-  const video3Ref = useRef();
-  const video4Ref = useRef();
-  const video5Ref = useRef();
-  const video6Ref = useRef();
-  let videoRefArray = [videoBigRef, video1Ref, video2Ref, video3Ref, video4Ref, video5Ref, video6Ref];
+  let videoRefArray = [videoBigRef, video1Ref]
+  for (let i = 0; i < nbVidSupp; i++) {
+    const element = useRef()
+    videoRefArray.push(element)
+  }
+
+  //const videoBigRef = useRef();
+  //const video1Ref = useRef();
+  //const video2Ref = useRef();
+  //const video3Ref = useRef();
+  //const video4Ref = useRef();
+  //const video5Ref = useRef();
+  //const video6Ref = useRef();
+  //let videoRefArray = [videoBigRef, video1Ref, video2Ref, video3Ref, video4Ref, video5Ref, video6Ref];
 
   // Gestion des événements des boutons de controle
   const handlePlay = () => {
@@ -169,7 +181,7 @@ function Learning() {
             <div className='row'>
               <SliderProgressBar
                 ref={progressBarRef}
-                video={video1Ref.current}
+                video={videoRefArray[1].current}
                 timeText={timeLabel}
                 value={time}
                 onChange={event => { handleSeek(event.target.valueAsNumber) }}
@@ -217,7 +229,7 @@ function Learning() {
             <div className='row'>
               <div className='col col-4 col-md-12 learning--smallVideo' onClick={event => { setVideoBig(song.videoPrincipale) }}>
                 <Video
-                  ref={video1Ref}
+                  ref={videoRefArray[1]}
                   pbrate={pbrate}
                   playing={playing}
                   source={song.videoPrincipale}
@@ -233,7 +245,7 @@ function Learning() {
                   onClick={() => setVideoBig(video)}
                 >
                   <Video 
-                    ref={video2Ref}
+                    ref={videoRefArray[index+2]}
                     pbrate={pbrate}
                     playing={playing}
                     source={video}
