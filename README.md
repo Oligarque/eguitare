@@ -22,7 +22,7 @@ Elle utilise **React** et **React-Player** pour une interface fluide et intuitiv
 -Node.js et npm installés sur votre machine.
 -Clonez ce dépôt :
 ```bash
-git clone https://github.com/oligarque/eguitare.git
+git clone https://github.com/Oligarque/eguitare.git
 cd eguitare
 npm install
 npm run dev
@@ -31,7 +31,7 @@ npm run dev
 ### 2. Version simple
 Cette version comporte un packaging. Pour le lancer en local sans prérequis, téléchargez le dossier, puis lancez la commande :
 ```bash
-git clone https://github.com/oligarque/eguitare.git
+git clone https://github.com/Oligarque/eguitare.git
 cd eguitare
 npm install
 npm run build
